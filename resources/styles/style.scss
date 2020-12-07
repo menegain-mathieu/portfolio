@@ -1,0 +1,66 @@
+@import './variables.scss';
+
+/**
+ * Package
+ * ------
+ */
+@import '~bootstrap/dist/css/bootstrap-reboot.min.css';
+// @import '~bootstrap/dist/css/bootstrap-grid.min.css';
+
+@import './global/typography.scss';
+@import './global/animation.scss';
+
+/**
+ * Global
+ * --------
+ */
+body {
+    #map {
+        min-height: 400px;
+    }
+
+    @media (max-width: $mq-large-tablet) {
+        &.no-scroll {
+            overflow: hidden;
+        }
+    }
+}
+  
+
+/**
+ * Navigation
+ * --------
+ */
+@import './global/header.scss';
+
+/*
+ * Contenu
+ * --------
+ */
+main {
+    overflow: hidden;
+    max-width: 100vw;
+    min-height: calc(100vh - 110px);
+    padding-top: 100vh;
+
+    section {
+        position: relative;
+        z-index: 2;
+        background-color: $secondary;
+        color: $white;
+        padding: 30px;
+    }
+}
+@import './global/home.scss';
+
+/*
+ * Form
+ * --------
+ */
+@import './lib/form.scss';
+
+/*
+ * Pied de page
+ * --------------
+ */
+@import './global/footer.scss';

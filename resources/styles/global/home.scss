@@ -1,0 +1,28 @@
+#home {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    max-height: 100vh;
+    transform: scale(1.1);
+    z-index: 1;
+    // transition: all .4s;
+
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+        width: 400px;
+        height: auto;
+
+        path {
+            stroke: $secondary;
+        }
+    }
+}

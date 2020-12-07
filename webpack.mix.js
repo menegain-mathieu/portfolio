@@ -2,6 +2,7 @@ const mix = require('laravel-mix');
 const LiveReloadPlugin = require('webpack-livereload-plugin');
 
 require('laravel-mix-polyfill');
+require('mix-html-builder');
 
 /*
  |--------------------------------------------------------------------------
@@ -14,26 +15,30 @@ require('laravel-mix-polyfill');
  |
  */
 
-mix.setPublicPath(`assets`)
+mix.setPublicPath(`dist`)
    .options({
         processCssUrls: false
    });
 
-mix.ts('resources/scripts/app.ts', 'scripts/script.js')
-   .sass('resources/admin/login.scss', 'admin')
-   .sass('resources/admin/admin.scss', 'admin')
-   .sass('resources/admin/editor.scss', 'admin')
-   .sass('resources/styles/_vendor.scss', 'styles')
-   .sass('resources/styles/style.scss', 'styles')
+mix.copy('resources/images', 'dist/assets/images')
+   .ts('resources/scripts/app.ts', 'assets/scripts/script.js')
+   .sass('resources/styles/_vendor.scss', 'assets/styles')
+   .sass('resources/styles/style.scss', 'assets/styles')
+   .html({
+          output: '.',
+          minify: {
+               removeComments: true
+          }
+     })
    .webpackConfig({
-        plugins: [
-            new LiveReloadPlugin()
-        ]
+          plugins: [
+               new LiveReloadPlugin()
+          ]
    })
    .polyfill({
-        enabled: true,
-        useBuiltIns: "usage",
-        targets: {"firefox": "50", "ie": 11}
+          enabled: true,
+          useBuiltIns: "usage",
+          targets: {"firefox": "50", "ie": 11}
    })
    .version();
 

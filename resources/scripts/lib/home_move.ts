@@ -7,20 +7,23 @@ export class HomeMove {
     private max: number;
     private size: Position;
     private element: HTMLElement;
+    private selector: HTMLElement;
 
-    constructor(id: string, max: number) {
+    constructor(id: string, element: string, max: number) {
         this.max = max;
-        this.element = document.getElementById(id);
+        this.selector = document.getElementById(id);
+        this.element = document.querySelector(element);
         this.size = {
             x: window.innerWidth,
             y: window.innerHeight,
         };
         
-        this.element.onmousemove = ((e) => {
+        this.selector.onmousemove = ((e) => {
             const valX = this.calcMove(e.clientX, this.size.x);
             const valY = this.calcMove(e.clientY, this.size.y);
             
-            this.element.style.backgroundPosition = String(valX * -1) + 'px '  + String(valY * -1) + 'px';
+            this.element.style.top = String(valY * -1) + 'px ';
+            this.element.style.left = String(valX * -1) + 'px ';
         });
     }
 

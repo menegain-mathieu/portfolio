@@ -17,4 +17,47 @@ body {
         text-decoration: none;
         transition: all .4s;
     }
+
+    .title {
+        position: relative;
+        width: 35%;
+        margin-left: auto;
+        z-index: 4;
+
+        h2 {
+            position: relative;
+            margin-bottom: 0;
+            text-align: center;
+            height: 100px;
+            padding-right: 120px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            font-size: 3rem;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 50%;
+                width: 200%;
+                height: 300%;
+                background-color: $primary;
+                z-index: -1;
+                transform: skew(75deg);
+            }
+        }
+    }
+
+    section {
+        padding-bottom: 25px;
+        
+        .content {
+            position: relative;
+            z-index: 4;
+            padding: 0 30px;
+        }
+    }
 }

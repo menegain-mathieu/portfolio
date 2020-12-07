@@ -1,0 +1,16 @@
+#about {
+    position: relative;
+
+    &::before {
+        content: "";
+        background-image: url('../images/logo.svg');
+        background-repeat: no-repeat;
+        width: 50%;
+        height: 100vh;
+        position: absolute;
+        z-index: 3;
+        opacity: .25;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}

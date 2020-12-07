@@ -1,6 +1,4 @@
-// import global from './global.js';
 import { Menu } from './lib/menu';
-// import { Map } from './lib/map';
 import { HomeMove } from './lib/home_move';
 
 export class AppComponent 
@@ -17,7 +15,7 @@ export class AppComponent
         }, 500);
         
         //Animate mouvement home banner
-        const movement = new HomeMove('home', 10);
+        // const movement = new HomeMove('home', '#bg picture', 15);
 
         console.log('Site Start');
     }

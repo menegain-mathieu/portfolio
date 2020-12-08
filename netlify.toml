@@ -1,0 +1,22 @@
+[[plugins]]
+    package = "netlify-plugin-inline-source"
+
+    [plugins.inputs]
+        attribute = "inline"
+        compress = true
+        pretty = false
+        ignore = []
+        svgAsImage = false
+
+[[headers]]
+    for = "/assets/images/*"
+    [headers.values]
+        Cache-Control = "public, s-max-age=31557600"
+[[headers]]
+    for = "/assets/styles/*.css"
+    [headers.values]
+        Cache-Control = "public, s-max-age=31557600"
+[[headers]]
+    for = "/assets/scripts/*.js"
+    [headers.values]
+        Cache-Control = "public, s-max-age=31557600"

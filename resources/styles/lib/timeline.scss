@@ -1,0 +1,45 @@
+.timeline {
+    list-style: none;
+    padding: 0;
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 3px;
+        height: 100%;
+        background-color: $white;
+        top: 1.8rem;
+        left: 23px;
+    }
+
+    li {
+        position: relative;
+        padding-left: 45px;
+        margin-bottom: 65px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 1.8rem;
+            left: 0;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            background-color: $white;
+            border-radius: 50px;
+        }
+
+        .date,
+        strong {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: $primary;
+        }
+
+        h4 {
+            font-size: 2rem;
+            margin: 0;
+            padding: 10px 0;
+        }
+    }
+}

@@ -10,6 +10,11 @@
     padding: 0;
     overflow: hidden;
     display: flex;
+    padding-bottom: 0;
+
+    &::before {
+        content: none;
+    }
 
     div {
         display: flex;
@@ -18,7 +23,17 @@
         height: 100vh;
 
         &.content {
-            width: 25%;
+            position: absolute;
+            top: 0;
+            left: -30%;
+            height: 100%;
+            width: 30%;
+            background-color: rgba($primary, .7);
+            transition: left 2s;
+
+            &.active {
+                left: 0;
+            }
 
             h1 {
                 font-size: 3.5rem;
@@ -28,8 +43,8 @@
 
         &#bg {
             position: relative;
-            width: 75%;
-    
+            width: 100%;
+
             picture,
             img {
                 position: absolute;
@@ -40,17 +55,24 @@
                 object-fit: cover;
                 z-index: 1;
             }
+
+            > div {
+                width: 70%;
+                margin-left: auto;
+                
+                svg {
+                    position: relative;
+                    z-index: 2;
+                    width: auto;
+                    height: 100vh;
+                    opacity: .7;
             
-            svg {
-                position: relative;
-                z-index: 2;
-                width: 400px;
-                height: auto;
-        
-                path {
-                    stroke: $primary;
+                    path {
+                        stroke: $primary;
+                    }
                 }
             }
+    
         }
     }
     

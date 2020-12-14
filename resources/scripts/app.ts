@@ -9,11 +9,16 @@ export class AppComponent
         menu.bindMobileBtn('open_menu');
         
         // Animate logo
+        const leftContent = document.querySelector('#home > .content');
         const logo = document.querySelector('#home svg');
         setTimeout(() => {
             logo.classList.add('active');
+            leftContent.classList.add('active');
         }, 500);
         
+        setTimeout(() => {
+            logo.classList.add('complete');
+        }, 5500);
         //Animate mouvement home banner
         // const movement = new HomeMove('home', '#bg picture', 15);
 

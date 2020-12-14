@@ -65,6 +65,42 @@ main {
         z-index: 2;
         background-color: $secondary;
         color: $white;
+        padding-bottom: 150px;
+    
+        &::before {
+            content: "";
+            background-image: url('/images/logo.svg');
+            background-repeat: no-repeat;
+            width: 50%;
+            height: 100vh;
+            position: absolute;
+            z-index: 3;
+            opacity: .2;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        &.light {
+            background-color: $primary;
+
+            &::before {
+                filter: invert(1);
+                opacity: .1;
+            }
+
+            .title {
+                h2 {
+                    &::after {
+                        background-color: $secondary;
+                    }
+                }
+            }
+
+            .date,
+            strong {
+                color: $secondary;
+            }
+        }
     }
 }
 
@@ -90,14 +126,26 @@ main {
     @media (min-width: 1200px) {
         max-width: 1140px;
     }
+}
 
-    @media (min-width: 1400px) {
-        max-width: 1380px;
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+
+    @media (max-width: 992px) {
+        flex: 0 0 100%;
+        max-width: 100%;
     }
 }
 
 @import './global/home.scss';
 @import './global/about.scss';
+@import './lib/timeline.scss';
 
 /*
  * Form

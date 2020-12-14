@@ -8,11 +8,13 @@
         svgAsImage = false
 
 [[plugins]]
-  package = "netlify-plugin-minify-html"
-  [plugins.inputs]
-    contexts = [
-      'main'
-    ]
+    package = "netlify-plugin-minify-html"
+    [plugins.inputs]
+        contexts = [
+            'main',
+            'branch-deploy',
+            'deploy-preview'
+        ]
 
   [plugins.inputs.minifierOptions]
     removeComments = true

@@ -29,7 +29,7 @@
             height: 100%;
             width: 30%;
             background-color: rgba($primary, .7);
-            transition: left 2s;
+            transition: left 2s, opacity 2s;
 
             &.active {
                 left: 0;
@@ -38,6 +38,7 @@
             h1 {
                 font-size: 3.5rem;
                 text-transform: uppercase;
+                color: $white;
             }
         }
 
